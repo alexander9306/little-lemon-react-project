@@ -1,0 +1,68 @@
+.testimonials-section {
+  background-color: var(--coral);
+  padding: 30px 0;
+  margin: 20px 0;
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonials-section article {
+  display: grid;
+  background-color: white;
+  margin-bottom: 30px;
+  grid-template-areas:
+    "rating rating"
+    "image name"
+    "comment comment"
+  ;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 230px;
+}
+
+.testimonials-section article>.stars {
+  grid-area: rating;
+  height: 10px;
+}
+
+.testimonials-section article>img {
+  grid-area: image;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.testimonials-section article>h3 {
+  grid-area: name;
+  align-self: center;
+}
+
+.testimonials-section article>p {
+  grid-area: comment;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .testimonials-section>div>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .testimonials-section>div>div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .testimonials-section article {
+    padding: 20px;
+  }
+}

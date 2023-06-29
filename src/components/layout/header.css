@@ -1,0 +1,59 @@
+header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: "logo  menu"
+}
+
+header>.hamburger {
+  display: none;
+}
+
+header a {
+  font-weight: bolder;
+}
+
+header>.logo {
+  grid-area: logo;
+}
+
+header>.logo>a>img {
+  padding-right: 3rem;
+  width: 12.5rem;
+}
+
+@media screen and (max-width: 1023px) {
+  header {
+    grid-template-columns: 35px 1fr;
+    grid-template-areas: "hamburger  logo"
+  }
+
+  header>.logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  header>.hamburger {
+    display: block;
+    grid-area: hamburger;
+  }
+
+  header>div.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+  }
+
+  header>.hamburger> :first-child :hover {
+    cursor: pointer;
+    color: var(--golden);
+  }
+
+  header>a>img {
+    width: 16.5rem;
+  }
+}

@@ -1,0 +1,14 @@
+.booking-form {
+  /* set item in the center of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-form>form {
+  display: grid;
+  max-width: 200px;
+  gap: 10px;
+
+
+}

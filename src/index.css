@@ -1,0 +1,122 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&family=Markazi+Text:wght@400;500&display=swap');
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --primary: #495E57;
+  --primary-darker: #3D4C47;
+  --golden: #F4CE14;
+  --golden-darker: #D9B10C;
+  --coral: #EE9972;
+  --pink: #FBDABB;
+  --pink-darker: #F8C9A3;
+  --lavender: #EDEFEE;
+  --charcoal: #333333;
+}
+
+body {
+  padding-top: 1.5rem;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Buttons */
+button {
+  font-family: 'Karla', sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+}
+
+button.primary-2 {
+  background-color: var(--pink);
+}
+
+button.primary-2:hover {
+  background-color: var(--pink-darker);
+  transition: background-color 0.5s ease;
+}
+
+button.primary {
+  background-color: var(--golden);
+}
+
+button.primary:hover {
+  background-color: var(--golden-darker);
+  transition: background-color 0.5s ease;
+}
+
+/* Headings */
+h1,
+h2 {
+  font-family: 'Markazi Text', serif;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Lists and Links */
+menu {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--charcoal);
+}
+
+a:hover,
+.active {
+  color: var(--golden);
+}
+
+/* Container */
+.container {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .container {
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+}
