@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 export default function Nav({ isMobileOpen, onCloseClick }) {
   return (
-    <nav className={`header-nav ${isMobileOpen && 'open'}`}>
+    <nav className={`header-nav ${isMobileOpen ? 'open' : ''}`}>
       <div className="logo">
         <img src={logo} alt="logo" />
         <div onClick={onCloseClick}>

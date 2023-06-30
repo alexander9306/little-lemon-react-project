@@ -4,6 +4,7 @@ import './booking-form.css';
 export default function BookingForm({
   availableTimes,
   onDateChange,
+  onSubmit,
 }) {
   const [state, setState] = useState({
     date: '',
@@ -11,6 +12,11 @@ export default function BookingForm({
     guests: '',
     occasion: '',
   });
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    onSubmit(state);
+  }
 
   function handleChange(event) {
     const { id, value } = event.target;
@@ -20,16 +26,13 @@ export default function BookingForm({
     }));
 
     if (id === 'date') {
-      onDateChange({
-        type: 'change_date',
-        date: value,
-      });
+      onDateChange({ type: 'change_date', payload: value });
     }
   }
 
   return (
     <section className="container booking-form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="date">Choose date</label>
         <input
           type="date"

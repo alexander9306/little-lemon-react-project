@@ -1,25 +1,29 @@
 import { useReducer } from 'react';
+import { redirect } from 'react-router-dom';
 import BookingForm from '../components/booking-form';
+import { fetchAPI, submitAPI } from '../utils/booking-api';
 
 export default function Booking() {
   function updateTimes(state, action) {
     if (action.type === 'change_date') {
       return {
-        availableTimes: state.availableTimes,
+        availableTimes: fetchAPI(new Date(action.payload)),
       };
     }
   }
-  const availableTimes = [
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ];
 
   function initializeTimes() {
-    return { availableTimes };
+    return { availableTimes: fetchAPI(new Date()) };
+  }
+
+  function submitForm(formData) {
+    const res = submitAPI(formData);
+
+    if (res) {
+      redirect('/success');
+    } else {
+      alert('error');
+    }
   }
 
   const [state, dispatch] = useReducer(
@@ -32,6 +36,7 @@ export default function Booking() {
       <BookingForm
         availableTimes={state.availableTimes}
         onDateChange={dispatch}
+        onSubmit={submitForm}
       />
     </>
   );

@@ -11,7 +11,10 @@ export default function Header() {
 
   return (
     <header className="container">
-      <div className={isNavOpen && 'hidden'} onClick={toggleNav} />
+      <div
+        className={isNavOpen ? 'hidden' : ''}
+        onClick={toggleNav}
+      />
       <div className="logo">
         <Link to="/">
           <img src={logo} alt="logo" />{' '}
