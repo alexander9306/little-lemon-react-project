@@ -8,6 +8,7 @@ import './index.css';
 import Root from './routes/root';
 import Home from './routes/home';
 import Booking from './routes/booking';
+import Success from './routes/success';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
         path: '/booking',
         element: <Booking />,
       },
+      {
+        path: '/success',
+        element: <Success />,
+      },
     ],
+    errorElement: <div className="container">404 Not Found</div>,
   },
 ]);
 

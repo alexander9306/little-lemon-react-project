@@ -36,8 +36,11 @@ export default function BookingForm({
   }
 
   return (
-    <section className="container booking-form">
-      <form onSubmit={formik.handleSubmit}>
+    <section className="booking-form">
+      <div>
+        <h2 className="container">Book a table</h2>
+      </div>
+      <form onSubmit={formik.handleSubmit} className="container">
         <label htmlFor="date">Choose date</label>
         <input
           type="date"
@@ -52,7 +55,6 @@ export default function BookingForm({
             {formik.errors.date}
           </div>
         ) : null}
-
         <label htmlFor="time">Choose time</label>
         <select
           id="time"
@@ -71,7 +73,6 @@ export default function BookingForm({
             {formik.errors.time}
           </div>
         ) : null}
-
         <label htmlFor="guests">Number of guests</label>
         <input
           type="number"
@@ -88,7 +89,6 @@ export default function BookingForm({
             {formik.errors.guests}
           </div>
         ) : null}
-
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
@@ -104,7 +104,6 @@ export default function BookingForm({
             {formik.errors.occasion}
           </div>
         ) : null}
-
         <button
           type="submit"
           aria-label="Make Your reservation"

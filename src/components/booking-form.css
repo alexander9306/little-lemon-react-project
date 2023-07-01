@@ -1,14 +1,35 @@
-.booking-form {
-  /* set item in the center of the screen */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.booking-form>div {
+  /* make a background banner */
+  background-color: var(--charcoal);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.booking-form button {
+  margin-top: 20px;
 }
 
 .booking-form>form {
+  margin: 0 auto;
+  padding: 10px 0;
   display: grid;
-  max-width: 200px;
+  max-width: 220px;
   gap: 10px;
+}
 
+.booking-form>form input,
+.booking-form>form select {
+  height: 30px;
+  font-size: 14px;
+  color: #374151;
+}
 
+.booking-form>form>label {
+  color: #374151;
+  font-size: large;
+}
+
+.booking-form .error {
+  color: red;
 }
