@@ -1,9 +1,11 @@
 import { useReducer } from 'react';
-import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BookingForm from '../components/booking-form';
 import { fetchAPI, submitAPI } from '../utils/booking-api';
 
 export default function Booking() {
+  const navigate = useNavigate();
+
   function updateTimes(state, action) {
     if (action.type === 'change_date') {
       return {
@@ -20,9 +22,9 @@ export default function Booking() {
     const res = submitAPI(formData);
 
     if (res) {
-      redirect('/success');
+      navigate('/success');
     } else {
-      alert('error');
+      alert('There is a reservation already for this date and time.');
     }
   }
 

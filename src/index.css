@@ -59,6 +59,12 @@ button.primary:hover {
   transition: background-color 0.5s ease;
 }
 
+button.primary:disabled {
+  color: var(--charcoal);
+  background-color: var(--golden-darker);
+  cursor: not-allowed;
+}
+
 /* Headings */
 h1,
 h2 {
